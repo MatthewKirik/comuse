@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{77586CB9-938B-4277-AF2E-B8D3D69220E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{77586CB9-938B-4277-AF2E-B8D3D69220E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E99FE474-1A75-4BE5-B4DA-A5790408513F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{647DCFEA-FD6F-4209-AECB-003B1F5718CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{7BC93C41-8700-4DFD-9791-21811E088D55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{77586CB9-938B-4277-AF2E-B8D3D69220E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77586CB9-938B-4277-AF2E-B8D3D69220E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77586CB9-938B-4277-AF2E-B8D3D69220E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC93C41-8700-4DFD-9791-21811E088D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC93C41-8700-4DFD-9791-21811E088D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC93C41-8700-4DFD-9791-21811E088D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC93C41-8700-4DFD-9791-21811E088D55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77586CB9-938B-4277-AF2E-B8D3D69220E5} = {647DCFEA-FD6F-4209-AECB-003B1F5718CC}
+		{7BC93C41-8700-4DFD-9791-21811E088D55} = {E99FE474-1A75-4BE5-B4DA-A5790408513F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58D26E9A-E646-4220-B520-273A8F7E29D6}
