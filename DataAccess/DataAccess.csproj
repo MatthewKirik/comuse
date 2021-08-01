@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Repositories\Implementations\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
 
   <ItemGroup>
