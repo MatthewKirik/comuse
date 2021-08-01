@@ -1,3 +1,4 @@
+using AutoMapperConfiguration;
 using DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,7 @@ namespace AuthAPI
         {
             services.AddDbContext<ComuseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("ComuseDB")));
+            services.AddSingleton(AutoMapperConfigurator.GetMapper());
         }
 
 
