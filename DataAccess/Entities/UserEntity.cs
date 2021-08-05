@@ -22,6 +22,8 @@ namespace DataAccess.Entities
         public string Password { get; set; }
 
         [Required]
+        public string Salt { get; set; }
+
         public string Image { get; set; }
     }
 }

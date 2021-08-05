@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace Repositories
 {
     public interface IUserRepository
     {
-        Task<UserDTO> AddUser(UserDTO user, string password);
         Task<UserDTO> GetUser(int id);
+        Task<UserDTO> GetUser(string email);
     }
 }

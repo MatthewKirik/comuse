@@ -2,6 +2,7 @@
 using DataAccess.Entities;
 using DataTransfer.Models;
 using Microsoft.EntityFrameworkCore;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,18 +17,14 @@ namespace DataAccess.Repositories.Implementations
             : base(comuseContext, mapper)
         { }
 
-        public async Task<UserDTO> AddUser(UserDTO user, string password)
-        {
-            var userEntity = mapper.Map<UserEntity>(user);
-            userEntity.Password = password;
-            var added = db.Users.Add(userEntity);
-            await db.SaveChangesAsync();
-            return mapper.Map<UserDTO>(added);
-        }
-
         public async Task<UserDTO> GetUser(int id)
         {
             var user = await db.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return mapper.Map<UserDTO>(user);
+        }
+        public async Task<UserDTO> GetUser(string email)
+        {
+            var user = await db.Users.FirstOrDefaultAsync(u => u.Email == email);
             return mapper.Map<UserDTO>(user);
         }
     }

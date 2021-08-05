@@ -14,6 +14,7 @@ namespace AutoMapperConfiguration
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
+                mc.All
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

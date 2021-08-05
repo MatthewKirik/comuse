@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataTransfer.Models
 {
-    public class UserDTO
+    public class UserCredentialsDTO
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string Email { get; set; }
-        public string Image { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
     }
 }
