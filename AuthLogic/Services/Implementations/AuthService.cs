@@ -34,6 +34,8 @@ namespace AuthLogic.Services.Implementations
         public async Task<string> GetJWT(string email, string password)
         {
             var credentials = await UserAuthRepository.GetUserCredentials(email);
+            if (credentials == null)
+                return null;
             var verified = await PasswordHashing.VerifyPassword(password, credentials.Password, credentials.Salt);
             if (!verified)
                 return null;
@@ -81,11 +83,11 @@ namespace AuthLogic.Services.Implementations
                 var jwt = new JwtSecurityToken(
                         issuer: AuthOptions.Issuer,
                         audience: AuthOptions.Audience,
-                        notBefore: DateTime.Now,
-                        claims: identity.Claims,
+                        notBefore: now,
                         expires: expires,
+                        claims: identity.Claims,
                         signingCredentials: signingCredentials);
-                var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+                encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
             });
             return encodedJwt;
         }

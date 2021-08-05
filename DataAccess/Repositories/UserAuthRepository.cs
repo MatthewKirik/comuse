@@ -20,12 +20,14 @@ namespace DataAccess.Repositories.Implementations
             userEntity.Salt = userCredentials.Salt;
             var added = db.Users.Add(userEntity);
             await db.SaveChangesAsync();
-            return mapper.Map<UserDTO>(added);
+            return mapper.Map<UserDTO>(added.Entity);
         }
 
         public async Task<UserCredentialsDTO> GetUserCredentials(string email)
         {
             var user = await db.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+                return null;
             var credentials = new UserCredentialsDTO
             {
                 Email = user.Email,

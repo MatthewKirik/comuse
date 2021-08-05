@@ -16,6 +16,7 @@ namespace AuthConfig
         public AuthOptions(IConfiguration configuration)
         {
             Configuration = configuration;
+            InitializeOptions();
         }
 
         private void InitializeOptions()
