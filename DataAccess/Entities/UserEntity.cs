@@ -25,5 +25,11 @@ namespace DataAccess.Entities
         public string Salt { get; set; }
 
         public string Image { get; set; }
+
+        public List<SpaceEntity> CreatedSpaces { get; set; } = new List<SpaceEntity>();
+
+        public List<SpaceMembershipEntity> Memberships { get; set; } = new List<SpaceMembershipEntity>();
+
+        public List<History.HistoryEventEntity> CausedEvents { get; set; } = new List<History.HistoryEventEntity>();
     }
 }
